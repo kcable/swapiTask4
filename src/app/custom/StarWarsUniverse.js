@@ -1,6 +1,5 @@
 
 import EventEmitter from "eventemitter3";
-import Application from "../Application";
 import Species from "./Species";
 
 export default class StarWarsUniverse extends EventEmitter {  
@@ -10,7 +9,7 @@ export default class StarWarsUniverse extends EventEmitter {
        this.species = [];
     }
 
-     get events(){
+     static get events(){
         return {MAX_SPECIES_REACHED:'max_species_reached',SPECIES_CREATED:"species_created"};
     }
 

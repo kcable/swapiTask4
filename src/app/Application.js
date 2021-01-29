@@ -36,7 +36,6 @@ export default class Application extends EventEmitter {
     // awaiting init function
     await this.data.universe.createSpecies();
     this.data.universe.on("MAX_SPECIES_REACHED",()=>{
-      console.log("we fuken did it boyz");
       console.log(this.data.universe.species);
     })
     
