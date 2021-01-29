@@ -27,7 +27,6 @@ export default class StarWarsUniverse extends EventEmitter {
        
        const speciesInstance = new Species();
        speciesInstance.on("SPECIES_CREATED",async (arg)=>{
-           console.log("listener called");
            this._onSpeciesCreated(speciesInstance);
            // i guess check ?
            if(this.speciesCount == this._maxSpecies){
@@ -37,6 +36,8 @@ export default class StarWarsUniverse extends EventEmitter {
        })
       
       await speciesInstance.init(`https://swapi.dev/api/species/${this.speciesCount + 1}/`);
+      speciesInstance.removeAllListeners();
+     
     }
 
     

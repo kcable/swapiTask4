@@ -38,9 +38,9 @@ export default class Application extends EventEmitter {
     this.data.universe.on("MAX_SPECIES_REACHED",()=>{
       console.log(this.data.universe.species);
     })
+    this.data.universe.removeAllListeners();
     
-    // create
-    console.log("do i ever come here ?");
+    
     this.emit(Application.events.APP_READY);
   }
 }
