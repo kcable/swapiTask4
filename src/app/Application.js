@@ -40,7 +40,7 @@ export default class Application extends EventEmitter {
     })
     
     // create
-
+    console.log("do i ever come here ?");
     this.emit(Application.events.APP_READY);
   }
 }
