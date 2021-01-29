@@ -1,4 +1,4 @@
-#IM USING SWAPI BECAUSE THE BOOOST API IS DOWN AT THE MOMENT I AM WRITING THIS
+# IM USING SWAPI BECAUSE THE BOOOST API IS DOWN AT THE MOMENT I AM WRITING THIS
 # ⚙ JavaScript Boilerplate
 This project is used as a boilerplate for tasks in the "JavaScript" course in Booost. It initializes a base application with a webpack dev server.
 
