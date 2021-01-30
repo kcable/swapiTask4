@@ -24,7 +24,7 @@ export default class Species extends EventEmitter {
     const data = await (await fetch(url)).json();
     this.nameset = data.name;
     this.classificationset = data.classification;
-    this.emit("SPECIES_CREATED", this.events);
+    this.emit("SPECIES_CREATED",this);
     
   }
 }
