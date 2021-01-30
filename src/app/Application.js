@@ -35,10 +35,6 @@ export default class Application extends EventEmitter {
     this.data.universe = new StarWarsUniverse();
     // awaiting init function
     this.data.universe.createSpecies();
-    this.data.universe.on("MAX_SPECIES_REACHED", () => {
-      console.log(this.data.universe.species);
-      console.log("reached !");
-    });
     this.data.universe.on("SPECIES_CREATED", (payload) => {
       if (this.data.universe._maxSpecies == payload.speciesCount) {
         this.data.universe.emit("MAX_SPECIES_REACHED");
@@ -46,6 +42,11 @@ export default class Application extends EventEmitter {
         this.data.universe.createSpecies();
       }
     });
+    this.data.universe.on("MAX_SPECIES_REACHED", () => {
+      console.log(this.data.universe.species);
+      console.log("reached !");
+    });
+    
 
     this.emit(Application.events.APP_READY);
   }
