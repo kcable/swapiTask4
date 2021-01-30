@@ -31,7 +31,7 @@ export default class StarWarsUniverse extends EventEmitter {
            // i guess check ?
            if(this.speciesCount == this._maxSpecies){
                 this.emit("MAX_SPECIES_REACHED");
-           } else {await this.createSpecies();}
+           } else {this.createSpecies();}
            
        })
       
