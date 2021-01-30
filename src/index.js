@@ -7,4 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (process.env.NODE_ENV === 'development') {
     window.__JS_APP = app;
   }
+
+  
 });
