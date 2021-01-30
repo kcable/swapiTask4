@@ -36,7 +36,7 @@ export default class StarWarsUniverse extends EventEmitter {
        })
       
       await speciesInstance.init(`https://swapi.booost.bg/api/species/${this.speciesCount + 1}/`);
-      speciesInstance.removeAllListeners();
+     
      
     }
 
