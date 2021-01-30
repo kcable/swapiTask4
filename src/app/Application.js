@@ -1,9 +1,9 @@
-import config from '../config';
-import EventEmitter from 'eventemitter3';
+import config from "../config";
+import EventEmitter from "eventemitter3";
 import StarWarsUniverse from "./custom/StarWarsUniverse";
-import Species from "./custom/Species";
+
 const EVENTS = {
-  APP_READY: 'app_ready',
+  APP_READY: "app_ready",
 };
 
 /**
@@ -35,16 +35,18 @@ export default class Application extends EventEmitter {
     this.data.universe = new StarWarsUniverse();
     // awaiting init function
     this.data.universe.createSpecies();
-    this.data.universe.on("MAX_SPECIES_REACHED",()=>{
+    this.data.universe.on("MAX_SPECIES_REACHED", () => {
       console.log(this.data.universe.species);
       console.log("reached !");
-     
-    })
-   
-    
-    
-    
+    });
+    this.data.universe.on("SPECIES_CREATED", (payload) => {
+      if (this.data.universe._maxSpecies == payload.speciesCount) {
+        this.data.universe.emit("MAX_SPECIES_REACHED");
+      } else {
+        this.data.universe.createSpecies();
+      }
+    });
+
     this.emit(Application.events.APP_READY);
   }
 }
-
